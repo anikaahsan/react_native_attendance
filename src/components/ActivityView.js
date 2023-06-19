@@ -1,11 +1,11 @@
 import React from 'react'
-import { Image, TouchableOpacity, View,Text, ScrollView, Pressable } from 'react-native'
+import { View,ScrollView, Text, Image, TouchableOpacity } from 'react-native'
 
 import RecentActivity from './RecentActivity'
 import ActivityBox from './ActivityBox'
 import Footer from './Footer'
 
-const ActivityView=()=>{
+const ActivityView=({navigation})=>{
     return(
     <View style={{ backgroundColor:'whitesmoke'}} >
 
@@ -14,7 +14,7 @@ const ActivityView=()=>{
                 <Text style={{ fontSize:20,fontWeight:'bold',marginBottom:5}}>Morning,Nimusoft</Text>
                 <Text style={{fontSize:15}}>13 June,2023</Text>
             </View>
-            <TouchableOpacity >
+            <TouchableOpacity onPress={()=>navigation.navigate('profile')}>
                 <Image source={require('../assets/accuracy.png')} style={{ width:50,height:50}}/>
             </TouchableOpacity>
         </View>
@@ -38,7 +38,7 @@ const ActivityView=()=>{
                <RecentActivity/>     
         </ScrollView>
         
-        <Footer/>
+        <Footer navigation={navigation}/>
         
     </View>
     )

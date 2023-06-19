@@ -2,16 +2,17 @@ import React from 'react'
 import { Image, TouchableOpacity, View,Text, ScrollView, Pressable } from 'react-native'
 import Footer from './Footer'
 
-const Profile=()=>{
+const Profile=({navigation})=>{
+   
      return(
-        <View style={{ backgroundColor:'whitesmoke'}}>
+        <View style={{ backgroundColor:'white'}}>
             
-                <TouchableOpacity style={{backgroundColor:'pink',height:140,width:140,zIndex:1,top:60,left:140,justifyContent:'center',alignItems:'center',borderRadius:70}}>
-                     <Image source={require('../assets/user.png')} style={{ height:100,width:100,top:8}}/>
+                <TouchableOpacity style={{zIndex:1,top:10,left:5,justifyContent:'center',alignItems:'center',borderRadius:70}}>
+                     <Image source={require('../assets/kingfisher.jpg')} style={{ height:125,width:125,top:8,borderRadius:65,borderWidth:4,borderColor:'white'}}/>
                 </TouchableOpacity>
                 
-                <View style={{backgroundColor:'lavender',height:215, margin:15,marginBottom:0}}>
-                   <View style={{marginTop:60}}>
+                <View style={{backgroundColor:'lavender',height:225, margin:15,marginBottom:0,marginTop:-35}}>
+                   <View style={{marginTop:65}}>
 
                         <Text style={{textAlign:'center',fontSize:23,fontWeight:'bold',color:'black'}}>Nimusoft</Text>
 
@@ -21,14 +22,14 @@ const Profile=()=>{
                                     <Text style={{ fontSize:15,fontWeight:'bold'}}>Joined 2021</Text>
                         </View>
 
-                        <View style={{backgroundColor:'darkslategray',height:55,width:350,margin:15,marginTop:20,borderRadius:10,flexDirection:'row',justifyContent:'space-around',alignItems:'center'}}>
+                        <View style={{backgroundColor:'slategray',height:55,width:350,margin:15,marginTop:25,borderRadius:10,flexDirection:'row',justifyContent:'space-around',alignItems:'center'}}>
                             <View style={{flexDirection:'row',alignItems:'center'}}>
-                                <Image source={require('../assets/profile/favourites.png')} style={{ height:30,width:30}}/>
+                                <Image source={require('../assets/profile/star-16.png')} style={{ height:30,width:30}}/>
                                 <Text style={{ fontSize:20,fontWeight:'bold',marginLeft:6 ,color:'white'}}>20.345pt</Text>
                             </View>
                             <TouchableOpacity style={{flexDirection:'row',alignItems:'center'}}>
                                <Text style={{ fontSize:15,fontWeight:'bold' ,marginRight:6,color:'white'}}>Exchange</Text>
-                               <Image  source={require('../assets/right-arrow.png')} style={{ height:10,width:10,top:1}}/>
+                               <Image  source={require('../assets/arrowicon.png')} style={{ height:15,width:15,top:1}}/>
                             </TouchableOpacity>
                             
                         </View>
@@ -36,36 +37,43 @@ const Profile=()=>{
                    </View>
                 </View>
 
-                <View style={{backgroundColor:'lavender',borderColor:'grey',height:75,width:375,borderRadius:3,margin:15,flexDirection:'row',justifyContent:'space-around'}}>
-                   <View>
-                     <Text>Time Off</Text>
-                     <Text>02</Text>
+                <View style={{backgroundColor:'lavender',borderColor:'grey',height:75,borderRadius:3,margin:15,flexDirection:'row',justifyContent:'space-around'}}>
+                   <View style={{margin:15,alignItems:'center',}}> 
+                     <Text style={{ fontSize:15,color:'black'}}>Time Off</Text>
+                     <Text style={{ fontSize:20,fontWeight:'bold',marginLeft:6 ,color:'black',marginTop:5}}>02</Text>
                    </View>
-                   <View>
-                      <Text>Attendance</Text>
-                      <Text>31</Text>
+                   <View  style={{margin:15 ,alignItems:'center',flexDirection:'row'}}>
+                      <View style={{backgroundColor:'black' ,height:30,width:1,marginRight:30}}></View>
+                      <View style={{alignItems:'center',}}>
+                        <Text style={{ fontSize:15,color:'black'}}>Attendance</Text>
+                        <Text style={{ fontSize:20,fontWeight:'bold',marginLeft:6 ,color:'black',marginTop:5}}>31</Text>
+                      </View>
                    </View>
-                   <View>
-                      <Text>Overtime</Text>
-                      <Text>12</Text>
+                   <View style={{margin:15,alignItems:'center',flexDirection:'row'}}>
+                      <View style={{backgroundColor:'black' ,height:30,width:1,marginRight:30}}></View>
+                      <View  style={{alignItems:'center',}}>
+                        <Text style={{ fontSize:15 ,color:'black'}}>Overtime</Text>
+                        <Text style={{ fontSize:20,fontWeight:'bold',marginLeft:6 ,color:'black',marginTop:5}}>12</Text>
+                      </View>
+                    
                    </View>
                 </View>
 
 
-                <View style={{backgroundColor:'white',height:55,width:375,borderColor:'lightgrey',borderWidth:1,borderRadius:3,margin:15,marginTop:0}}>
-                    <View>
-                        <Text>My Payslip</Text>
-                        <Image/>
+                <TouchableOpacity style={{flexDirection:'row',alignItems:'center',backgroundColor:'white',height:55,borderColor:'lightgrey',borderWidth:1,borderRadius:3,margin:15,marginTop:0,padding:10,paddingLeft:15}}>
+                    <View style={{flexDirection:'row',alignItems:'center'}}> 
+                        <Image source={require('../assets/profile/payslip.png')} style={{ height:30,width:30}}/>
+                        <Text  style={{ fontSize:18,color:'black',fontWeight:'bold',marginLeft:15}}>My Payslip</Text>
                     </View>
-                    <Image/>
-                </View>
-                <View style={{backgroundColor:'white',borderColor:'lightgrey',height:55,width:375,borderRadius:3,margin:15,marginTop:0,borderWidth:1,}}>
-                    <View>
-                        <Text>Reimbursment</Text>
-                        <Image/>
+                    <Image  source={require('../assets/right-arrow.png')} style={{ height:10,width:10,top:1 ,marginLeft:190}}/>
+                </TouchableOpacity>
+                <TouchableOpacity style={{flexDirection:'row',alignItems:'center',backgroundColor:'white',borderColor:'lightgrey',height:55,borderRadius:3,margin:15,marginTop:0,borderWidth:1,padding:10,paddingLeft:15}}>
+                    <View style={{flexDirection:'row',alignItems:'center'}}> 
+                        <Image source={require('../assets/profile/refund.png')} style={{ height:30,width:30}}/>
+                        <Text  style={{ fontSize:18,color:'black',fontWeight:'bold',marginLeft:15}}>Reimbursment</Text>
                     </View>
-                    <Image/>
-                </View>
+                    <Image  source={require('../assets/right-arrow.png')} style={{ height:10,width:10,top:1, marginLeft:160}}/>
+                </TouchableOpacity>
                 
             
 
@@ -74,7 +82,7 @@ const Profile=()=>{
 
             
             <View >
-                <Footer/>
+                <Footer navigation={navigation}/>
             </View>
         </View>
      )

@@ -3,7 +3,7 @@ import { View,ScrollView, Text, Image, TouchableOpacity } from 'react-native'
 
 
 
-const Homes=()=>{
+const Homes=({navigation})=>{
     return(
   <ScrollView>    
         <View style={{margin:16}}>
@@ -88,7 +88,7 @@ const Homes=()=>{
                         <Text style={{textAlign:'center',fontSize:20,padding:11,color:'white',fontWeight:'bold'}}>I'm a Manager</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate('activity')}>
                     <View style={{borderWidth:1 ,borderColor:'grey',height:50,borderRadius:3}}>
                         <Text style={{textAlign:'center',fontSize:20,padding:11,color:'darkslategray',fontWeight:'bold'}}>I'm an Employee</Text>
                     </View>
