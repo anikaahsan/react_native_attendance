@@ -15,7 +15,7 @@ const Footer=({navigation })=>{
              <TouchableOpacity onPress={()=>navigation.navigate('tab')}>
                 <Image source={require('../assets/headericon/clock.png')} style={{height:25 ,width:25}}/>
              </TouchableOpacity>
-             <TouchableOpacity>
+             <TouchableOpacity onPress={()=>navigation.navigate('materialtab')}>
                 <Image source={require('../assets/headericon/settings.png')} style={{height:25 ,width:25}}/>
              </TouchableOpacity>
         </View>

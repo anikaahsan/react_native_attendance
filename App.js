@@ -1,4 +1,4 @@
-// import 'react-native-gesture-handler';
+import 'react-native-gesture-handler'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -11,6 +11,7 @@ import ProfileHeaderRight from './src/components/headers/ProfileHeaderRight'
 
 import Tab from './src/components/Tab';
 import Drawer from './src/components/Drawer'
+import MaterialTopTab from './src/components/MaterialTopTab'
 
 
 
@@ -45,7 +46,8 @@ const App=()=>{
                          
                          ) }}/>  
 
-          <Stack.Screen name='tab' component={Tab} options={{headerShown:false}}/>    
+          <Stack.Screen name='tab' component={Tab} options={{headerShown:false}}/> 
+          <Stack.Screen name='materialtab' component={MaterialTopTab}  options={{headerShown:false}} />
           <Stack.Screen name='drawer' component={Drawer} options={{headerShown:false}}/>               
         
 
