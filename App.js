@@ -2,38 +2,46 @@ import 'react-native-gesture-handler'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import {Text,Button} from 'react'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import {  createDrawerNavigator } from "@react-navigation/drawer";
 
-import Homes from './src/components/Homes'
-import ActivityView from './src/components/ActivityView'
-import Profile from './src/components/Profile'
-import ProfileHeaderRight from './src/components/headers/ProfileHeaderRight'
-
-import Tab from './src/components/Tab';
-import Drawer from './src/components/Drawer'
-import MaterialTopTab from './src/components/MaterialTopTab'
-
-
-
-
+import TabHome from './src/components/TabHome'
+import TabActivity from './src/components/TabActivity'
+import TabProfile from './src/components/TabProfile'
+import Tabs from './src/components/Tabs';
+import LeaveNavigation from './src/components/LeaveNavigation'
+import TabLeave from './src/components/TabLeave'
 
 
 
 const App=()=>{
- const Stack=createNativeStackNavigator()
+      const Stack=createNativeStackNavigator()
+      const Tab=createBottomTabNavigator()
+      const Drawer=createDrawerNavigator()
 
-   return(
+      return(
   
-   //   <Homes/>
-   //   <ActivityView/>
-   //   <Profile/>
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='home'>
-         <Stack.Screen 
-               name='home'
-               component={Homes}
-               options={{headerShown:false}}/>
-         <Stack.Screen 
+            <NavigationContainer>
+                  <Drawer.Navigator initialRouteName='Menu' screenOptions={{headerShown:false,
+                                                            animation:'fade_from_bottom'}}>
+                        <Drawer.Screen 
+                              name='Menu'
+                              component={Tabs}
+                              options={{headerShown:false}}/>
+                        
+                        <Drawer.Screen name='Home' component={TabHome} options={{headerShown:false}}/>
+                        <Drawer.Screen name='Activity Details' component={TabActivity} options={{headerShown:false}}/>
+                        <Drawer.Screen name='My Profile' component={TabProfile} options={{headerShown:false}}/>
+                        <Drawer.Screen name='leave' component={TabLeave} options={{headerShown:false,drawerItemStyle:{display:'none'}}}/>
+
+
+                  </Drawer.Navigator>
+            </NavigationContainer>
+   )
+}
+export default App
+
+  {/* <Stack.Screen 
                name='activity' 
                component={ActivityView}
                options={{headerShown:false}}/>      
@@ -44,18 +52,10 @@ const App=()=>{
                         headerShadowVisible:false,
                         headerRight:()=>( <ProfileHeaderRight/>
                          
-                         ) }}/>  
+                         ) }}/>   */}
 
-          <Stack.Screen name='tab' component={Tab} options={{headerShown:false}}/> 
-          <Stack.Screen name='materialtab' component={MaterialTopTab}  options={{headerShown:false}} />
-          <Stack.Screen name='drawer' component={Drawer} options={{headerShown:false}}/>               
-        
+                           {/* <Stack.Screen name='materialtab' component={MaterialTopTab}  options={{headerShown:false}} />      */}
 
-      </Stack.Navigator>   
-    </NavigationContainer>
-     
-    
-     
-   )
-}
-export default App
+
+
+                       

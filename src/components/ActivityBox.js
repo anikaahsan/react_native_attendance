@@ -5,9 +5,9 @@ const ActivityBox=()=>{
       return(
         <View style={{ marginBottom:20,margin:15}}>
 
-            <View style={{flexDirection:'row', justifyContent:'space-between',marginBottom:10}}>
+            <View style={{flexDirection:'row', marginBottom:10}}>
             
-                <View style={{backgroundColor:'white' ,height:120,width:186}}>
+                <View style={{backgroundColor:'white' ,height:120,width:'48.5%',marginRight:10}}>
                     <View style={{flexDirection:'row',alignItems:'center',margin:10}}>
                         <Image source={require('../assets/activityicon/logout.png')} style={{ height:35,width:35}}/>
                         <Text style={{ fontSize:18,fontWeight:'bold',marginLeft:5}}>Check In</Text>
@@ -19,7 +19,7 @@ const ActivityBox=()=>{
                     </View>
                 </View>
             
-                <View style={{ backgroundColor:'white',height:120,width:186}}>
+                <View style={{ backgroundColor:'white',height:120,width:'48.5%'}}>
                     <View style={{flexDirection:'row',alignItems:'center',margin:10}}>
                         <Image  source={require('../assets/activityicon/workaholism.png')} style={{ height:35,width:35}}/>
                         <Text style={{ fontSize:18,fontWeight:'bold',marginLeft:5}}>Check Out</Text>
@@ -33,9 +33,9 @@ const ActivityBox=()=>{
             
             </View>
             
-            <View style={{ flexDirection:'row',justifyContent:'space-between'}}>
+            <View style={{ flexDirection:'row',}}>
             
-                <View style={{ backgroundColor:'white',height:120,width:186}}>
+                <View style={{ backgroundColor:'white',height:120,width:'48.5%',marginRight:10}}>
                     <View style={{flexDirection:'row',alignItems:'center',margin:10}}>
                         <Image source={require('../assets/activityicon/overtime.png')} style={{ height:40,width:40}}/>
                         <Text style={{ fontSize:17,fontWeight:'bold',marginLeft:5}}>Start Overtime</Text>
@@ -44,7 +44,7 @@ const ActivityBox=()=>{
                     <Text numberOfLines={1} style={{ fontSize:15,fontWeight:'bold',margin:10,top:-10}}>Project revison from..</Text>
                 </View>
             
-                <View style={{backgroundColor:'white',height:120,width:186}}>
+                <View style={{backgroundColor:'white',height:120,width:'48.5%'}}>
                     <View style={{flexDirection:'row',alignItems:'center',margin:10 ,marginBottom:8}}>
                         <Image source={require('../assets/activityicon/time-is-money.png')} style={{ height:40,width:40}}/>
                         <Text style={{ fontSize:17,fontWeight:'bold',marginLeft:5}}>Finish Overtime</Text>
